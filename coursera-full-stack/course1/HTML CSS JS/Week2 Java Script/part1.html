@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>part1</title>
+	<script type="text/javascript">
+	var color = ["Aqua" , "Blue" ,"Crimson" , "DarkSalmon" ,  "FireBrick" , "Green" , "HoneyDew" , "Indigo" , "Khaki" , "Lavaender" , "Maroon" , "Olive" , "Purple" , "Red" , "Voilet" , "Yellow"];
+	var target;
+	var guess_input_text;
+	var guess_input;
+	var finished = false ;
+	var guesses = 0;
+	
+	function do_game(){
+		var random_number = Math.random()*(color.length);
+		var random_number_integer = Math.floor(random_number);
+		target = random_number_integer;
+		alert(color[target]);
+		
+		while(!finished) {
+			guess_input_text = prompt("I am thinking of one of these colors. \n\n"+color+"\n\n What color am I thinking of?");
+			guess_input = guess_input_text;
+			
+			if ( guess_input == color[target] ){
+					alert("Congratulations, you have guessed the color.")
+				finished= true;
+			}
+			else {
+				
+				
+			
+                alert("Sorry, I don't recognise your color.\n\n" + "Please try again.")
+				finished = false;
+			}
+		}
+		
+	}
+	
+	
+	
+	</script>
+</head>
+<body onload = "do_game()">
+
+</body>
+</html>
